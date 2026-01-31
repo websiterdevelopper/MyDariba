@@ -1,0 +1,128 @@
+/* Variables */
+:root {
+  --main-clr: #5b23ff;
+  --secondary-clr: #362f4f;
+  --tier-clr: #008bff;
+  --accent: #e4ff30;
+  --site-bg: #eee;
+  --valid-field-clr: #29f53a;
+  --invalid-field-clr: #ed4331;
+  --sec-inner-padding: 1rem;
+  --sec-margin-block: 1.5rem;
+  --btn-padding: 1rem;
+  --main-radius: 0.25rem;
+  --btn-font-sz: 0.825rem;
+  --container-padding-main: 1rem;
+  /* --title-font-sz: clamp(2.5rem, 2rem, 1.5rem); */
+  --transition-dur: 0.3s;
+}
+
+/* Reinitializations */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Cal sans";
+  src: url("../Fonts/Cal\ Sans/CalSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../Fonts/Inter/Inter-VariableFont_opsz\,wght.ttf");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cal sans", Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+}
+
+body {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-block: 0.5rem;
+}
+
+/* Global classes */
+.container {
+  max-width: 90%;
+  margin: 0.75rem auto;
+  padding: 0 var(--container-padding-main);
+}
+
+/* ========================================== Header ========================================== */
+.mobile-menu {
+  display: none;
+}
+
+header .header-main h1 {
+  color: var(--main-clr);
+}
+header .header-main,
+header .header-main ul.desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .header-main ul.desktop {
+  gap: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .header-main nav,
+  .header-main .desktop button {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .mobile-menu span {
+    display: block;
+    height: 4px;
+    background-color: var(--secondary-clr);
+    width: 40px;
+    margin: 0.325rem 0;
+    border-radius: var(--main-radius);
+    position: relative;
+  }
+
+  .mobile-menu .ham-menu-main {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .mobile-menu .ham-menu-main ul li {
+    margin: 0.5rem 0;
+    font-size: 2rem;
+  }
+}
