@@ -155,6 +155,7 @@ nav ul li a:hover {
     width: 100%;
     height: calc(100% - var(--header-height));
     transform-origin: top center;
+    transition: var(--transition-dur);
   }
 
   nav ul li {
