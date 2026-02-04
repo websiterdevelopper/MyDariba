@@ -7,12 +7,11 @@
   --site-bg: #eee;
   --valid-field-clr: #29f53a;
   --invalid-field-clr: #ed4331;
-  --sec-inner-padding: 1rem;
   --sec-margin-block: 1.5rem;
   --btn-padding: 1rem;
-  --main-radius: 0.75rem;
-  --btn-font-sz: 0.825rem;
-  --container-padding-main: 1rem;
+  --main-radius: 0.625rem;
+  --btn-font-sz: 0.875rem;
+  --container-padding-main: 1.25rem;
   --header-height: 10vh;
   /* --title-font-sz: clamp(2.5rem, 2rem, 1.5rem); */
   --transition-dur: 0.3s;
@@ -40,6 +39,11 @@ ul {
   list-style: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 a,
 button {
   all: unset;
@@ -49,9 +53,10 @@ button {
 
 button {
   color: white;
-  padding: 1rem 1.125rem;
+  padding: 0.825rem 1rem;
   border-radius: var(--main-radius);
   font-weight: bold;
+  font-size: var(--btn-font-sz);
 }
 
 button.btn-main {
@@ -122,6 +127,10 @@ nav ul li a:hover {
   color: var(--tier-clr);
 }
 
+.ham-menu {
+  display: none;
+}
+
 @media (max-width: 801px) {
   header .cta-head-btn {
     display: none;
@@ -142,7 +151,11 @@ nav ul li a:hover {
     position: relative;
   }
 
-  nav ul {
+  nav ul.desktop {
+    display: none;
+  }
+
+  nav .ham-menu ul {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -156,6 +169,7 @@ nav ul li a:hover {
     height: calc(100% - var(--header-height));
     transform-origin: top center;
     transition: var(--transition-dur);
+    z-index: 999;
   }
 
   nav ul li {
@@ -167,5 +181,46 @@ nav ul li a:hover {
   nav ul li a:hover {
     border-bottom: 5px solid white;
     color: white;
+  }
+}
+
+/* ========================================== Hero ========================================== */
+.hero {
+  margin: var(--sec-margin-block) 0;
+}
+
+.hero-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  align-items: center;
+}
+
+.hero-main .text-col p {
+  margin: 1.5rem 0;
+  text-align: justify;
+}
+
+.hero-main .img-col img {
+  transform: scale(1.2);
+  animation: float alternate infinite 2s ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 801px) {
+  .hero-main {
+    gap: 2rem;
+  }
+  .hero-main .text-col,
+  .hero-main .text-col p {
+    text-align: center;
   }
 }

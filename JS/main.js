@@ -1,11 +1,7 @@
 let hamburgerMenu = document.querySelector(".ham-menu");
-let navList = document.querySelector("nav ul");
+let navList = document.querySelector(".ham-menu ul");
 
 // Click animation
-if (document.body.contains(hamburgerMenu) && navList.classList.length == 1) {
-  navList.classList.add("hammenu-out-animation");
-}
-
 hamburgerMenu.addEventListener("click", () => {
   if (navList.classList.contains("hammenu-out-animation")) {
     navList.classList.add("hammenu-in-animation");
